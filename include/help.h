@@ -1,0 +1,1 @@
+void help(char * exe);
