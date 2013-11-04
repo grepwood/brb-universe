@@ -1,1 +1,1 @@
-void detect_idiots(char * lena);
+void detect_idiots(char * alen);
