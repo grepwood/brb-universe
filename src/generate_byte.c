@@ -1,12 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
-char byte(char inf, char max)
+char byte(unsigned char inf, unsigned char max)
 {
 	char result;
 	while(result < inf || result > max)
 	{
-		result = rand()%0xFF;
+		srand(time(NULL));
+		result = rand();
+		printf("%c", result);
 	}
+	puts("");
 	return result;
 }

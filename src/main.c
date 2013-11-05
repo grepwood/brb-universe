@@ -28,30 +28,29 @@ int main(int argc, char * argv[])
 		}
 	}
 	detect_idiots(argv[2]);
-	const long int len = strtoul(argv[2],NULL,10);
-	bool done = 0;
-//	long int variety;
-	char * password;
+	size_t len = strtoul(argv[2],NULL,10);
+	bool success = 0;
+	char * password = NULL;
+	password = malloc(len);
 
-	while(!done)
+	if(!strcmp(argv[1],"wpa"))
 	{
-		if(!strcmp(argv[1],"wpa"))
+		if(len < WPA_LMIN || len > WPA_LMAX)
 		{
-			if(len < WPA_LMIN || len > WPA_LMAX)
-			{
-				printf("ERROR: password length (%li) outside of useful range: [%i,%i]\n", len, WPA_LMIN, WPA_LMAX);
-				exit(1);
-			}
-			password = malloc(len);
-			wpa(len,&password);
-//			variety = WPA_LMAX - WPA_LMIN;
-			done = 1;
+			printf("ERROR: password length (%li) outside of useful range: [%i,%i]\n", len, WPA_LMIN, WPA_LMAX);
+			exit(1);
 		}
+		wpa(len,&password);	//space = wpa(len,&password);
+//		variety = WPA_LMAX - WPA_LMIN;
+		success = 1;
 	}
 
 //	long int tolerance = ponder(len,variety);
 
-	printf("Your password is:\n%s\n",password);
+	if(success)
+	{
+		printf("Your password is:\n%s\n",password);
+	}
 	free(password);
 	return 0;
 }

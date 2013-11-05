@@ -1,1 +1,1 @@
-char byte(char inf, char max);
+char byte(unsigned char inf, unsigned char max);

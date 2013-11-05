@@ -1,16 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <time.h>
 
 #include "ascii.h"
 #include "generate_byte.h"
 
-void wpa(long int len, char ** password)
+void wpa(const size_t len, char ** password)
 {
-	long int pos;
-	srand(time(NULL));
+	size_t pos;
+	char * buf = NULL;
+	buf = malloc(len);
 	for(pos = 0; pos < len; ++pos)
 	{
-		*password[pos] = byte(ASCII_MIN,ASCII_MAX);
+//		buf[pos] = byte(ASCII_MIN,ASCII_MAX);
+		buf[pos] = 'D';
 	}
+	for(pos = 0; pos < len; ++pos)
+	{
+		printf("%c", buf[pos]);
+	}
+	puts("");
+	memcpy(*password,buf,len);
+	free(buf);
 }
