@@ -30,7 +30,7 @@ int main(int argc, char * argv[])
 	detect_idiots(argv[2]);
 	size_t len = strtoul(argv[2],NULL,10);
 	bool success = 0;
-	char * password = NULL;
+	char * password;
 	password = malloc(len);
 
 	if(!strcmp(argv[1],"wpa"))
@@ -45,7 +45,7 @@ int main(int argc, char * argv[])
 		success = 1;
 	}
 
-//	long int tolerance = ponder(len,variety);
+//	uint64_t tolerance = ponder(len,variety);
 
 	if(success)
 	{

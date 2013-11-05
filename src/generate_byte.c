@@ -2,15 +2,13 @@
 #include <stdlib.h>
 #include <time.h>
 
-char byte(unsigned char inf, unsigned char max)
+char gen_byte(char inf, char max)
 {
 	char result;
+	srand(time(0));
 	while(result < inf || result > max)
 	{
-		srand(time(NULL));
 		result = rand();
-		printf("%c", result);
 	}
-	puts("");
 	return result;
 }

@@ -1,1 +1,4 @@
-char byte(unsigned char inf, unsigned char max);
+#include <stdlib.h>
+#include <time.h>
+
+char gen_byte(char inf, char max);

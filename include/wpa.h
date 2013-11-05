@@ -3,4 +3,4 @@
 
 #include "ascii.h"
 
-void wpa(long int len, char * password[]);
+void wpa(size_t len, char ** password);
