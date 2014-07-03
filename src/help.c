@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void help(char * exe)
+char help(char * exe)
 {
-	printf("brb-universe\nCopyright 2013 grepwood, licensed under GPL v3\n\nUsage: %s\t[help || sec len]\n\t-h, --help\tprint this message\n\tsec\t\tsecurity for which to generate\n\tlen\t\tlength of generated password\n", exe);
+	return printf("brb-universe\nCopyright 2014 grepwood, licensed under GPL v3\n\nUsage: %s\t[help || sec len]\n\t-h, --help\tprint this message\n\tsec\t\tsecurity for which to generate\n\tlen\t\tlength of generated password\n", exe);
 }

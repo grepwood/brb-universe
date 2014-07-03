@@ -9,7 +9,7 @@ void wpa(size_t len, char ** password)
 {
 	size_t pos;
 	char * buf = NULL;
-	buf = malloc(len);
+	buf = (char*)malloc(len);
 	for(pos = 0; pos < len; ++pos)
 	{
 		buf[pos] = gen_byte(ASCII_MIN,ASCII_MAX);

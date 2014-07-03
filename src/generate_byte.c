@@ -1,16 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
-#include <time.h>
+#include <openssl/rand.h>
 
 char gen_byte(char inf, char max)
 {
-	char result;
-	srand(time(0));
-	while(result < inf || result > max)
+	unsigned char result;
+	int bleh;
+	while((	result < inf
+	||	result > max)
+	&&	!bleh)
 	{
-		result = rand();
+		bleh = RAND_bytes(&result,1);
 	}
-	usleep(1000000);
 	return result;
 }

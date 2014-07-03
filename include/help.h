@@ -1,1 +1,1 @@
-void help(char * exe);
+char help(char * exe);

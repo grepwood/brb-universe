@@ -1,12 +1,12 @@
 CC=gcc
-CFLAGS=-g -Wall -Wextra -pedantic -std=gnu99
-LDFLAGS=-lm
+CFLAGS=-g -Wall -Wextra -pedantic
+LDFLAGS=-lm -lcrypto
 
 all: objects
-	$(CC) $(LDFLAGS) $(CFLAGS) src/*.o -o bu
+	$(CC) $(LDFLAGS) $(CFLAGS) src/*.o -o brbuni
 
 objects:
 	cd src && make all && cd ..
 
 clean:
-	rm -f bu src/*.o
+	rm -f brbuni src/*.o

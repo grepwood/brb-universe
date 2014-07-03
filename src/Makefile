@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-g -Wall -Wextra -pedantic -std=gnu99
+CFLAGS=-g -Wall -Wextra -pedantic
 INFLAGS=-I../include
 
 all:
